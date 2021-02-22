@@ -1,6 +1,6 @@
 import sys
 
-from test_db1.configDB import MyPymysqlPool
+from db_Demo2_sql.configDB import MyPymysqlPool
 
 userId = '578973'
 phone = '15035444223'

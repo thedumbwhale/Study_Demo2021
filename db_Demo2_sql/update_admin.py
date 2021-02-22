@@ -1,4 +1,4 @@
-from test_db1.configDB import MyPymysqlPool
+from db_Demo2_sql.configDB import MyPymysqlPool
 
 phone = '15035444223';
 

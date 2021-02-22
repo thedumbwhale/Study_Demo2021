@@ -1,0 +1,10 @@
+# Project exclude paths
+/venv/
+.idea/.gitignore
+.idea/dbDemo1.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+requests_Demo1_mockchrome/__pycache__/
+db_Demo2_sql/__pycache__/
