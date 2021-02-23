@@ -4,7 +4,7 @@ from db_Demo2_sql.configDB import MyPymysqlPool
 
 # UserId = '578973';
 phone = '15035444223'
-app_client_id = '6'
+app_client_id = '8'
 
 service = MyPymysqlPool("service")
 
@@ -46,7 +46,13 @@ mallUserInfo = mall.select(sqlmall)
 if str(mallUserInfo) == "False":
     print("查无此人！")
 else:
+    referrerAA = str(mallUserInfo[0][21])
+    if str(referrerAA[0][21]) == '1':
+        allow_distribution = '白名单'
+    else:
+        allow_distribution = '非白名单'
     print("查询结果(成员表）：" + str(mallUserInfo))
+    print("此人为" + allow_distribution + "账号！！！")
 
 sqlmall2 = "select * from ums_member_client_info where user_id =  " + str(userId) + " and app_client_id = " + str(
     app_client_id)
@@ -63,7 +69,7 @@ print("__________________________")
 sqlmall3 = "select * from ums_member_client_info where referrer = " + str(userId)
 mallReferrerMe = mall.select(sqlmall3)
 if str(mallReferrerMe) == "False":
-    print("查无此人！")
+    print("此人无下线 ，不需删除记录！")
 else:
     print("查询结果(我的上线表）：" + str(mallReferrerMe))
     print("我的id userid：" + str(mallReferrerMe[0][1]), "我的上线 referrer：" + str(mallReferrerMe[0][2]))

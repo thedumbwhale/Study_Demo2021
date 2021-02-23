@@ -5,24 +5,20 @@ class TestCase1(unittest.TestCase):
     # def setUp(self):
     # def tearDown(self):
     def testCase1(self):
-        print
-        'aaa'
+        print("aa")
 
     def testCase2(self):
-        print
-        'bbb'
+        print("aa1")
 
 
 class TestCase2(unittest.TestCase):
     # def setUp(self):
     # def tearDown(self):
     def testCase1(self):
-        print
-        'aaa1'
+        print("bb")
 
     def testCase2(self):
-        print
-        'bbb1'
+        print("bb1")
 
 
 if __name__ == "__main__":
@@ -31,3 +27,4 @@ if __name__ == "__main__":
     suite2 = unittest.TestLoader().loadTestsFromTestCase(TestCase2)
     suite = unittest.TestSuite([suite1, suite2])
     unittest.TextTestRunner(verbosity=2).run(suite)
+    print("UnitTest成功！")

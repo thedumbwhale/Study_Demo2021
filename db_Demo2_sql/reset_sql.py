@@ -2,9 +2,9 @@ import sys
 
 from db_Demo2_sql.configDB import MyPymysqlPool
 
-userId = '578973'
+userId = '578982'
 phone = '15035444223'
-app_client_id = '6'
+app_client_id = '8'
 
 service = MyPymysqlPool("service")
 print("________service_____________")
@@ -96,12 +96,14 @@ else:
     sys.exit(0)
 
 print("__________________________")
-sqlmallC1 = "delete from ums_member_client_info where referrer = " + str(userId)
+sqlmallC1 = "delete from ums_member_client_info where referrer = " + str(userId) + " and app_client_id = " + str(
+    app_client_id)
 mall.delete(sqlmallC1)
-sqlmallC2 = "select * from ums_member_client_info where referrer = " + str(userId)
+sqlmallC2 = "select * from ums_member_client_info where referrer = " + str(userId) + " and app_client_id = " + str(
+    app_client_id)
 mallReferrerMe = mall.select(sqlmallC2)
 if str(mallReferrerMe) == "False":
-    print("user_account_access_info (上级表）删除成功。(我的下级情清空完毕)")
+    print("user_account_access_info (上级表）删除成功。(我的下级清空完毕)")
 else:
     print("删除失败！")
     print("查询结果(我的上线表）：" + str(mallReferrerMe))
