@@ -2,7 +2,7 @@ import sys
 
 from db_Demo2_sql.configDB import MyPymysqlPool
 
-userId = '578982'
+userId = '578988'
 phone = '15035444223'
 app_client_id = '8'
 
